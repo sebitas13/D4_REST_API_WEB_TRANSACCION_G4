@@ -38,6 +38,10 @@ export class EquipoService {
     return this.http.put(this.url+'/'+id,equipo);
    }
 
+   adApuesta(apuesta:Apuesta){
+    return this.http.post(this.url+ '/apuesta',apuesta);
+   }
+
 }
 
 export interface Equipo{
@@ -47,3 +51,12 @@ export interface Equipo{
   logo? : string,
 
 }
+
+export interface Apuesta{
+  email? :string,
+  equipo? : string,
+  monto? : Number,
+
+}
+
+

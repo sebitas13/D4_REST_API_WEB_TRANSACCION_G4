@@ -53,5 +53,9 @@ export class InicioComponent implements OnInit {
     this.router.navigate(['/edit/'+id]);
   }
 
+  apuesta(id:any){
+    this.router.navigate(['/apuesta/'+id]);
+  }
+
 
 }

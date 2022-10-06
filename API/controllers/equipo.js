@@ -1,5 +1,6 @@
 
 const equipoSchema = require('../modelo/equipo');
+const {transaccion} = require('./transaccion');
 
 
 const getEquipos = (req,res) =>{
@@ -50,11 +51,28 @@ const createEquipo = (req, res) => {
     .catch((error)=> res.json({message:error}));
   }
 
+  const updateApuesta = (req,res) => {
+  
+    //const {id} = req.params;
+    const {email,equipo,monto} = req.body;
+    console.log(req.body);
+    transaccion(email,equipo,monto);
+    // equipoSchema
+    // .updateOne(
+    //   {_id:id},
+    //   {$set:{nombre,entrenador,logo}}
+    //   )
+    // .then((data)=>res.json(data))
+    // .catch((error) => res.json({message:error}));
+
+  }
+
 
 module.exports = {
     getEquipos,
     createEquipo,
     deleteEquipo,
     findEquipo,
-    updateEquipo
+    updateEquipo,
+    updateApuesta
 }
