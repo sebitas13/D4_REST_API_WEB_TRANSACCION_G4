@@ -13,12 +13,12 @@ const transaccion = async (email,equipo,monto) =>{
         await cliente.connect();
 
 
-        await crearReserva(cliente,
+       const apuesta = await crearApuesta(cliente,
             email,
             equipo, //Equipo
             monto); //Monto
 
-            
+          return apuesta;  
     } catch (error) {
         console.log('erro: '+error);
     
@@ -29,7 +29,7 @@ const transaccion = async (email,equipo,monto) =>{
 }
 
 
-async function crearReserva(cliente, userEmail,nombreEquipo, monto) {
+async function crearApuesta(cliente, userEmail,nombreEquipo, monto) {
 
     const usuarios = cliente.db("BD4").collection("usuarios");
 
@@ -75,6 +75,7 @@ async function crearReserva(cliente, userEmail,nombreEquipo, monto) {
 
         if (resultadoTransaccion) {
             console.log("La apuesta fue creada con éxito.");
+            return resultadoTransaccion;
         } else {
             console.log("La transacción fue abortada intencionalmente.");
         }

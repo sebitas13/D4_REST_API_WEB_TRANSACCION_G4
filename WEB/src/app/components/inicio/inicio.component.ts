@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit } from '@angular/core';
 import {EquipoService,Equipo} from '../../services/equipo.service';
 
 import {Router} from '@angular/router';

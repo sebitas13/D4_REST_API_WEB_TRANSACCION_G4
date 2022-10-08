@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,10 @@ export class EquipoService {
 
    adApuesta(apuesta:Apuesta){
     return this.http.post(this.url+ '/apuesta',apuesta);
+   }
+
+   login_cliente(data:any): Observable<any>{
+    return this.http.post('/api/login',data);
    }
 
 }

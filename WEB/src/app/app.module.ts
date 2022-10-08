@@ -10,6 +10,7 @@ import { ModificarComponent } from './components/modificar/modificar.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { ApuestaComponent } from './components/apuesta/apuesta.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ApuestaComponent } from './components/apuesta/apuesta.component';
     AgregarComponent,
     InicioComponent,
     ModificarComponent,
-    ApuestaComponent
+    ApuestaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
